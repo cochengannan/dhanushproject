@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Ticket Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+    <header>
+        <div class="logo">
+            <img src="logo.jpg">
+            <h1>ITCTC</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="trainticket.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Welcome to ITCTC</h2>
+    </main>
+</head>
+<body>
+    <div class="container">
+        <h1>Train Ticket Booking System</h1>
+        <form id="bookingForm">
+            <label for="from">From:</label>
+            <input type="text" id="from" required>
+
+            <label for="to">To:</label>
+            <input type="text" id="to" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+
+            <label for="passengers">Number of Passengers:</label>
+            <input type="number" id="passengers" min="1" required>
+
+            <button type="submit">Book Ticket</button>
+        </form>
+        <div id="confirmation" class="hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

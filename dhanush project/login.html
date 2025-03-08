@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="loginstyles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="loginForm">
+            <h1>Login</h1>
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit" action="trainticket.html">Login</button>
+            <div id="error" class="error hidden"></div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting
+        
+            // Get form values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('error');
+        
+            // Simple validation
+            if (username === '' || password === '') {
+                errorDiv.textContent = 'Please fill in all fields.';
+                errorDiv.classList.remove('hidden');
+            } else if (username.length < 3 || password.length < 6) {
+                errorDiv.textContent = 'Username must be at least 3 characters and password at least 6 characters.';
+                errorDiv.classList.remove('hidden');
+            } else {
+                errorDiv.classList.add('hidden');
+                alert('Login successful!'); // Replace with actual login logic
+                location.replace("trainticket.html");
+                // Here you can redirect to another page or perform other actions
+            }
+            
+        });
+
+    </script>
+</body>
+</html>
